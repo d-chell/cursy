@@ -17,8 +17,7 @@ const (
     CLIPBOARD
     BG
     GIF
-    BG
-    n 
+    MUSIC
 )
 
 const (
@@ -69,7 +68,8 @@ func annoy(done chan bool) {
 			moveX -= 750
 			moveY -= 500
 			time.Sleep(1 * time.Second)
-			robotgo.MovesClick(moveX, moveY)
+			robotgo.MoveSmooth(moveX, moveY, 1)
+			robotgo.MouseClick()
         case SCROLLER:
             fmt.Println("0.5")
             robotgo.ScrollMouse(10, "up")
